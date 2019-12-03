@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		254E75562396EC0B00D007B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E75552396EC0B00D007B2 /* AppDelegate.swift */; };
-		254E75582396EC0B00D007B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E75572396EC0B00D007B2 /* SceneDelegate.swift */; };
-		254E755A2396EC0B00D007B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E75592396EC0B00D007B2 /* ViewController.swift */; };
-		254E755D2396EC0B00D007B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254E755B2396EC0B00D007B2 /* Main.storyboard */; };
 		254E755F2396EC0E00D007B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 254E755E2396EC0E00D007B2 /* Assets.xcassets */; };
 		254E75622396EC0E00D007B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254E75602396EC0E00D007B2 /* LaunchScreen.storyboard */; };
+		254E756A2396EC3F00D007B2 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E75692396EC3F00D007B2 /* QRCodeGenerator.swift */; };
+		254E756C2396EC5600D007B2 /* RandomVinGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E756B2396EC5600D007B2 /* RandomVinGeneratorViewController.swift */; };
+		254E756E2396EC6B00D007B2 /* RandomVinProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E756D2396EC6B00D007B2 /* RandomVinProvider.swift */; };
+		254E75702396ECA500D007B2 /* VINDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E756F2396ECA500D007B2 /* VINDecoder.swift */; };
+		254E75722396ECB700D007B2 /* VINDecodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E75712396ECB700D007B2 /* VINDecodeResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		254E75522396EC0B00D007B2 /* VINGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VINGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		254E75552396EC0B00D007B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		254E75572396EC0B00D007B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		254E75592396EC0B00D007B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		254E755C2396EC0B00D007B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		254E755E2396EC0E00D007B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		254E75612396EC0E00D007B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		254E75632396EC0E00D007B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		254E75692396EC3F00D007B2 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
+		254E756B2396EC5600D007B2 /* RandomVinGeneratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomVinGeneratorViewController.swift; sourceTree = "<group>"; };
+		254E756D2396EC6B00D007B2 /* RandomVinProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomVinProvider.swift; sourceTree = "<group>"; };
+		254E756F2396ECA500D007B2 /* VINDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VINDecoder.swift; sourceTree = "<group>"; };
+		254E75712396ECB700D007B2 /* VINDecodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VINDecodeResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				254E75552396EC0B00D007B2 /* AppDelegate.swift */,
-				254E75572396EC0B00D007B2 /* SceneDelegate.swift */,
-				254E75592396EC0B00D007B2 /* ViewController.swift */,
-				254E755B2396EC0B00D007B2 /* Main.storyboard */,
 				254E755E2396EC0E00D007B2 /* Assets.xcassets */,
 				254E75602396EC0E00D007B2 /* LaunchScreen.storyboard */,
 				254E75632396EC0E00D007B2 /* Info.plist */,
+				254E75692396EC3F00D007B2 /* QRCodeGenerator.swift */,
+				254E756B2396EC5600D007B2 /* RandomVinGeneratorViewController.swift */,
+				254E756D2396EC6B00D007B2 /* RandomVinProvider.swift */,
+				254E756F2396ECA500D007B2 /* VINDecoder.swift */,
+				254E75712396ECB700D007B2 /* VINDecodeResponse.swift */,
 			);
 			path = VINGenerator;
 			sourceTree = "<group>";
@@ -127,7 +133,6 @@
 			files = (
 				254E75622396EC0E00D007B2 /* LaunchScreen.storyboard in Resources */,
 				254E755F2396EC0E00D007B2 /* Assets.xcassets in Resources */,
-				254E755D2396EC0B00D007B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +143,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				254E755A2396EC0B00D007B2 /* ViewController.swift in Sources */,
+				254E756A2396EC3F00D007B2 /* QRCodeGenerator.swift in Sources */,
+				254E75722396ECB700D007B2 /* VINDecodeResponse.swift in Sources */,
 				254E75562396EC0B00D007B2 /* AppDelegate.swift in Sources */,
-				254E75582396EC0B00D007B2 /* SceneDelegate.swift in Sources */,
+				254E756C2396EC5600D007B2 /* RandomVinGeneratorViewController.swift in Sources */,
+				254E75702396ECA500D007B2 /* VINDecoder.swift in Sources */,
+				254E756E2396EC6B00D007B2 /* RandomVinProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		254E755B2396EC0B00D007B2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				254E755C2396EC0B00D007B2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		254E75602396EC0E00D007B2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

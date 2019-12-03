@@ -7,3 +7,35 @@
 //
 
 import Foundation
+
+struct VINDecoder {
+
+    struct CallerCredentials: Encodable {
+        let accountNumber = "string"
+        let accountSecret = "string"
+        let region = "CA"
+        let service = "string"
+    }
+
+    private let vinDescriptionURLString = "https://lb.api.int.chrome.traderev.com/chrome/vehicle/description?vin="
+
+    func decode(vin: String, completion: @escaping((VINDecodeResponse?) -> Void)) {
+        guard let vinDescriptionURL = URL(string: vinDescriptionURLString + vin) else {
+            completion(nil)
+            return
+        }
+        var urlRequest = URLRequest(url: vinDescriptionURL)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = try? JSONEncoder().encode(CallerCredentials())
+        let session = URLSession.shared
+        session.dataTask(with: urlRequest, completionHandler: { data, response, error in
+            if let data = data,
+                let decodedResponse = try? JSONDecoder().decode(VINDecodeResponse.self, from: data) {
+                completion(decodedResponse)
+            } else {
+                completion(nil)
+            }
+        }).resume()
+    }
+}
