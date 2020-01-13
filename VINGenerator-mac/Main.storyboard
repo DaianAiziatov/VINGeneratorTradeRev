@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="oBf-hx-hss">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--VIN Generator-->
+        <scene sceneID="3ub-1s-XKc">
+            <objects>
+                <viewController title="VIN Generator" id="oBf-hx-hss" customClass="RandomVinGeneratorNSViewController" customModule="VINGenerator_mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="0i4-sV-eVo">
+                        <rect key="frame" x="0.0" y="0.0" width="581" height="421"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-FF-Ssd">
+                                <rect key="frame" x="191" y="171" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="808-MB-jAF"/>
+                                    <constraint firstAttribute="height" constant="200" id="cRE-z5-avc"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="placeholder" id="SrF-h1-b89"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-Ff-quI">
+                                <rect key="frame" x="254" y="140" width="73" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Vin Details" id="B4T-q1-fYw">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UgE-xr-V5g">
+                                <rect key="frame" x="250" y="97" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Reload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yOe-Ll-SIe">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapReloadButton:" target="oBf-hx-hss" id="u9c-FE-R97"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="UgE-xr-V5g" firstAttribute="top" secondItem="Bb9-Ff-quI" secondAttribute="bottom" constant="15" id="BKT-Ah-ROV"/>
+                            <constraint firstItem="hnf-FF-Ssd" firstAttribute="centerX" secondItem="0i4-sV-eVo" secondAttribute="centerX" id="F86-wc-nPu"/>
+                            <constraint firstItem="Bb9-Ff-quI" firstAttribute="centerX" secondItem="0i4-sV-eVo" secondAttribute="centerX" id="HcJ-lR-99B"/>
+                            <constraint firstItem="Bb9-Ff-quI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0i4-sV-eVo" secondAttribute="leading" constant="30" id="c2G-EL-pZX"/>
+                            <constraint firstItem="UgE-xr-V5g" firstAttribute="centerX" secondItem="0i4-sV-eVo" secondAttribute="centerX" id="i0s-Zv-lHr"/>
+                            <constraint firstItem="hnf-FF-Ssd" firstAttribute="top" secondItem="0i4-sV-eVo" secondAttribute="top" constant="50" id="iDR-VH-Bzm"/>
+                            <constraint firstItem="Bb9-Ff-quI" firstAttribute="top" secondItem="hnf-FF-Ssd" secondAttribute="bottom" constant="15" id="iav-Ba-q8J"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bb9-Ff-quI" secondAttribute="trailing" constant="30" id="qbb-Um-yXe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="qrCodeImageView" destination="hnf-FF-Ssd" id="PPG-j5-xGi"/>
+                        <outlet property="vinDetailsLabel" destination="Bb9-Ff-quI" id="8WJ-kn-F9E"/>
+                    </connections>
+                </viewController>
+                <customObject id="CJZ-a3-fuD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70.5" y="23.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="placeholder" width="150" height="100"/>
+    </resources>
+</document>

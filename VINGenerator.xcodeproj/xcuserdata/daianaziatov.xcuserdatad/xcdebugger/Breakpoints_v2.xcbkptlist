@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DB6ED733-8706-4037-8C09-8CB630FB5712"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VINGenerator/RandomVinGeneratorViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "loadRandomVin()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DE2CE137-292F-49B9-8868-EFA098AEBF56"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -33,6 +17,86 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "decode(vin:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D6549E8-DCEF-452A-9912-4E3AA6363ADC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared Code/RandomVinLoading.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "loadRandomVin()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4D6549E8-DCEF-452A-9912-4E3AA6363ADC - 5c65d5dfaaf2ed43"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in VINGenerator_mac):VINGenerator_mac.RandomVinLoader&lt; where A: VINGenerator_mac.FromVinDecodeResponseUISetuping, A: VINGenerator_mac.GenericErrorShowable&gt;.loadRandomVin() -&gt; ()"
+                  moduleName = "VINGenerator-mac"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daianaziatov/Desktop/VINGenerator/Shared%20Code/RandomVinLoading.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  uuid = "4D6549E8-DCEF-452A-9912-4E3AA6363ADC - 88d0d76c0dfaf16"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in (extension in VINGenerator_mac):VINGenerator_mac.RandomVinLoader&lt; where A: VINGenerator_mac.FromVinDecodeResponseUISetuping, A: VINGenerator_mac.GenericErrorShowable&gt;.loadRandomVin() -&gt; ()"
+                  moduleName = "VINGenerator-mac"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daianaziatov/Desktop/VINGenerator/Shared%20Code/RandomVinLoading.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "147">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C37346A3-6FD8-434B-BC41-33F46E0D2398"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared Code/RandomVinProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "getRandomVIN(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E62E8EDA-2587-403C-A4FC-CD5D8792D53E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared Code/RandomVinProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getRandomVIN(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

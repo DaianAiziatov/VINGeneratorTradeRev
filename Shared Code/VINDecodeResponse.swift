@@ -30,4 +30,11 @@ struct VINDecodeResponse: Decodable {
         division = try vinDescriptionValues.decode(String.self, forKey: .division)
         modelName = try vinDescriptionValues.decode(String.self, forKey: .modelName)
     }
+
+    var carDetails: String {
+        let make = division
+        let model = modelName
+        let year = modelYear
+        return "\(year) \(make) \(model)"
+    }
 }

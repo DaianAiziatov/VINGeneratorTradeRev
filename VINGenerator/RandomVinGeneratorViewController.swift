@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RandomVinGeneratorViewController: UIViewController {
+class RandomVinGeneratorViewController: UIViewController, RandomVinLoader {
 
     private var qrCodeImageView: UIImageView!
     private var reloadButton: UIButton!
@@ -30,45 +30,6 @@ class RandomVinGeneratorViewController: UIViewController {
         setupLabel()
         setupButton()
         loadRandomVin()
-    }
-
-    func loadRandomVin() {
-        RandomVinProvider().getRandomVIN { vin in
-            if let vin = vin {
-                self.decode(vin: vin)
-            } else {
-                self.showError()
-            }
-        }
-    }
-
-    private func decode(vin: String) {
-        VINDecoder().decode(vin: vin) { vinDecodeResponse in
-            if let vinDecodeResponse = vinDecodeResponse {
-                self.setupUI(with: vinDecodeResponse, vin: vin)
-            } else {
-                self.showError()
-            }
-        }
-    }
-
-    private func showError() {
-        let alertController = UIAlertController(title: nil, message: "Something went wrong", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "ok", style: .default)
-        alertController.addAction(okAction)
-        present(alertController, animated: true)
-    }
-
-    private func setupUI(with vinDecodeResponse: VINDecodeResponse, vin: String) {
-        let make = vinDecodeResponse.division
-        let model = vinDecodeResponse.modelName
-        let year = vinDecodeResponse.modelYear
-        let qrCodeImage = QRCodeGenerator().generateQRCode(from: vin)
-        UIPasteboard.general.string = vin
-        DispatchQueue.main.async {
-            self.vinDescriptionLabel.text = "\(vin)\n\(year) \(make) \(model)"
-            self.qrCodeImageView.image = qrCodeImage
-        }
     }
 
     @objc
@@ -153,5 +114,25 @@ class RandomVinGeneratorViewController: UIViewController {
                                                             multiplier: 1,
                                                             constant: 200)
         view.addConstraints([centerXImageViewConstraint, centerYImageViewConstraint, widthImageViewConstraint, heightImageViewConstraint])
+    }
+}
+
+extension RandomVinGeneratorViewController: FromVinDecodeResponseUISetuping {
+    func setupUI(with vinDecodeResponse: VINDecodeResponse, vin: String) {
+        let qrCodeImage = QRCodeGenerator().generateQRCode(from: vin)
+        UIPasteboard.general.string = vin
+        DispatchQueue.main.async {
+            self.vinDescriptionLabel.text = "\(vin)\n\(vinDecodeResponse.carDetails)"
+            self.qrCodeImageView.image = qrCodeImage
+        }
+    }
+}
+
+extension RandomVinGeneratorViewController: GenericErrorShowable {
+    func showError() {
+        let alertController = UIAlertController(title: nil, message: "Something went wrong", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
     }
 }
