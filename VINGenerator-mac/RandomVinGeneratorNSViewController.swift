@@ -11,7 +11,11 @@ import Cocoa
 class RandomVinGeneratorNSViewController: NSViewController, RandomVinLoader {
 
     @IBOutlet weak var qrCodeImageView: NSImageView!
-    @IBOutlet weak var vinDetailsLabel: NSTextField!
+    @IBOutlet weak var vinDetailsLabel: NSTextField! {
+        didSet {
+            vinDetailsLabel.isSelectable = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +25,19 @@ class RandomVinGeneratorNSViewController: NSViewController, RandomVinLoader {
     @IBAction func didTapReloadButton(_ sender: NSButton) {
         loadRandomVin()
     }
+
+    private func copyToClipBoard(textToCopy: String) {
+        let pasteBoard = NSPasteboard.general
+        pasteBoard.clearContents()
+        pasteBoard.setString(textToCopy, forType: .string)
+    }
 }
 
 extension RandomVinGeneratorNSViewController: FromVinDecodeResponseUISetuping {
     func setupUI(with vinDecodeResponse: VINDecodeResponse, vin: String) {
         let qrCodeImage = QRCodeGenerator().generateQRCode(from: vin)
         DispatchQueue.main.async {
+            self.copyToClipBoard(textToCopy: vin)
             self.vinDetailsLabel.stringValue = "\(vin)\n\(vinDecodeResponse.carDetails)"
             self.qrCodeImageView.image = qrCodeImage
         }
