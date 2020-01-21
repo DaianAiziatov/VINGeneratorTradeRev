@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol RandomVinLoader {
+protocol RandomVinLoadable {
     func loadRandomVin()
 }
 
-extension RandomVinLoader where Self: GenericErrorShowable & FromVinDecodeResponseUISetuping {
+extension RandomVinLoadable where Self: GenericErrorShowable & FromVinDecodeResponseUISetuping {
     func loadRandomVin() {
         RandomVinProvider().getRandomVIN { vin in
             if let vin = vin {

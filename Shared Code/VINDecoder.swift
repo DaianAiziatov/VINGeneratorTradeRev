@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct VINDecoder {
+protocol VINDecoding {
+    func decode(vin: String, completion: @escaping((VINDecodeResponse?) -> Void))
+}
+
+struct VINDecoder: VINDecoding {
 
     struct CallerCredentials: Encodable {
         let accountNumber = "string"

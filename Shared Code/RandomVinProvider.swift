@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct RandomVinProvider {
+protocol RandomVinProviding {
+    func getRandomVIN(completion: @escaping(_ VIN: String?) -> Void)
+}
+
+struct RandomVinProvider: RandomVinProviding {
     private let randomCachedVinURLString = "https://lb.api.int.chrome.traderev.com/chrome/vehicle/description/randomVin"
     func getRandomVIN(completion: @escaping(_ VIN: String?) -> Void) {
         guard let randomCachedVinURL = URL(string: randomCachedVinURLString) else {

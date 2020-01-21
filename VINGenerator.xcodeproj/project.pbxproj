@@ -24,6 +24,7 @@
 		25E7D7C123CCF9F400F76A9F /* GenericErrorShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7D7BF23CCF9F400F76A9F /* GenericErrorShowable.swift */; };
 		25E7D7C323CCFA6400F76A9F /* FromVinDecodeResponseUISetuping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7D7C223CCFA6400F76A9F /* FromVinDecodeResponseUISetuping.swift */; };
 		25E7D7C423CCFA6400F76A9F /* FromVinDecodeResponseUISetuping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7D7C223CCFA6400F76A9F /* FromVinDecodeResponseUISetuping.swift */; };
+		25E7D7E523D783D900F76A9F /* RandomVinGeneratorNSViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7D7E423D783D900F76A9F /* RandomVinGeneratorNSViewControllerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		25E7D7BC23CCF82B00F76A9F /* RandomVinLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomVinLoading.swift; sourceTree = "<group>"; };
 		25E7D7BF23CCF9F400F76A9F /* GenericErrorShowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericErrorShowable.swift; sourceTree = "<group>"; };
 		25E7D7C223CCFA6400F76A9F /* FromVinDecodeResponseUISetuping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromVinDecodeResponseUISetuping.swift; sourceTree = "<group>"; };
+		25E7D7E423D783D900F76A9F /* RandomVinGeneratorNSViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomVinGeneratorNSViewControllerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				25E7D7B423CCF0E800F76A9F /* BarcodeGenerator.swift */,
 				25E7D7B823CCF58F00F76A9F /* Main.storyboard */,
 				25E7D7BA23CCF6DB00F76A9F /* RandomVinGeneratorNSViewController.swift */,
+				25E7D7E423D783D900F76A9F /* RandomVinGeneratorNSViewControllerHelper.swift */,
 			);
 			path = "VINGenerator-mac";
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				25E7D7A223CCECD000F76A9F /* AppDelegate.swift in Sources */,
 				25E7D7BE23CCF82B00F76A9F /* RandomVinLoading.swift in Sources */,
+				25E7D7E523D783D900F76A9F /* RandomVinGeneratorNSViewControllerHelper.swift in Sources */,
 				25E7D7C123CCF9F400F76A9F /* GenericErrorShowable.swift in Sources */,
 				25E7D7B523CCF0E800F76A9F /* BarcodeGenerator.swift in Sources */,
 				25E7D7B023CCEF4600F76A9F /* VINDecodeResponse.swift in Sources */,

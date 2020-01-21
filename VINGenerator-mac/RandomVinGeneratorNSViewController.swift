@@ -8,18 +8,18 @@
 
 import Cocoa
 
-class RandomVinGeneratorNSViewController: NSViewController, RandomVinLoader {
+class RandomVinGeneratorNSViewController: NSViewController {
 
     @IBOutlet weak var barcodeTypeSegmentedControl: NSSegmentedControl!
-    @IBOutlet weak var qrCodeImageView: NSImageView!
-    @IBOutlet weak var vinDetailsLabel: NSTextField! {
-        didSet {
-            vinDetailsLabel.isSelectable = true
-        }
+    @IBOutlet weak var barcodeImageView: NSImageView!
+    @IBOutlet weak var vinDetailsLabel: NSTextField!
+    @IBOutlet weak var barcodeWidthConstraint: NSLayoutConstraint!
+
+    private var isQRCode: Bool {
+        return barcodeTypeSegmentedControl.selectedSegment == 0
     }
 
-    @IBOutlet weak var barcodeWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var barcodeHeightConstraint: NSLayoutConstraint!
+    var helper: RandomVinGeneratorNSViewControllerHelper = RandomVinGeneratorNSViewControllerHelper()
 
     struct Sizes {
         struct QRCode {
@@ -31,50 +31,39 @@ class RandomVinGeneratorNSViewController: NSViewController, RandomVinLoader {
         }
     }
     
-    private var isQRCode: Bool {
-        return barcodeTypeSegmentedControl.selectedSegment == 0
-    }
-    private var currentVin: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadRandomVin()
+        vinDetailsLabel.isSelectable = true
+        helper.delegate = self
+        helper.loadRandomVin()
     }
     
     @IBAction func didTapReloadButton(_ sender: NSButton) {
-        loadRandomVin()
+        helper.loadRandomVin()
     }
     
     @IBAction func didChangeBarcodeType(_ sender: NSSegmentedControl) {
-        guard let currentVin = currentVin else { return }
-        setBarcode(for: currentVin)
+        helper.didChangeBarcodeType(to: isQRCode ? .qr : .bar)
     }
 
-    private func copyToClipBoard(textToCopy: String) {
-        let pasteBoard = NSPasteboard.general
-        pasteBoard.clearContents()
-        pasteBoard.setString(textToCopy, forType: .string)
-    }
-
-    private func setBarcode(for vin: String) {
-        let qrCodeImage = BarcodeGenerator().generateBarcode(from: vin, isQRCode: isQRCode)
-        qrCodeImageView.image = qrCodeImage
+    private func setBarcode(with image: NSImage?) {
+        barcodeImageView.image = image
         barcodeWidthConstraint.constant = isQRCode ? Sizes.QRCode.width : Sizes.Barcode.width
     }
 }
 
-extension RandomVinGeneratorNSViewController: FromVinDecodeResponseUISetuping {
-    func setupUI(with vinDecodeResponse: VINDecodeResponse, vin: String) {
-        currentVin = vin
+extension RandomVinGeneratorNSViewController: RandomVinGeneratorNSViewControllerHelperDelegate {
+    func setupUI(with vinDecodeResponse: VINDecodeResponse, vin: String, image: NSImage?) {
         DispatchQueue.main.async {
-            self.copyToClipBoard(textToCopy: vin)
             self.vinDetailsLabel.stringValue = "\(vin)\n\(vinDecodeResponse.carDetails)"
-            self.setBarcode(for: vin)
+            self.setBarcode(with: image)
         }
     }
-}
 
-extension RandomVinGeneratorNSViewController: GenericErrorShowable {
+    func updateBarcode(with image: NSImage?) {
+        setBarcode(with: image)
+    }
+
     func showError() {
         DispatchQueue.main.async {
             let alert = NSAlert()

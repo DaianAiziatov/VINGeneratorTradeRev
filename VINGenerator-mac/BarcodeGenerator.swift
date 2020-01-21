@@ -7,7 +7,11 @@
 //
 import AppKit
 
-struct BarcodeGenerator {
+protocol BarcodeGenerating {
+    func generateBarcode(from string: String, isQRCode: Bool) -> NSImage?
+}
+
+struct BarcodeGenerator: BarcodeGenerating {
     func generateBarcode(from string: String, isQRCode: Bool) -> NSImage? {
         guard let data = string.data(using: isQRCode ? .utf8 : .ascii),
             let filter = getCIFilter(from: data, isQRcode: isQRCode),

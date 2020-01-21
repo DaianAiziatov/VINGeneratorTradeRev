@@ -68,10 +68,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="barcodeHeightConstraint" destination="cRE-z5-avc" id="W8m-hh-rVP"/>
+                        <outlet property="barcodeImageView" destination="hnf-FF-Ssd" id="PPG-j5-xGi"/>
                         <outlet property="barcodeTypeSegmentedControl" destination="cnj-Nq-d96" id="bTz-fz-A32"/>
                         <outlet property="barcodeWidthConstraint" destination="808-MB-jAF" id="khL-Fj-63y"/>
-                        <outlet property="qrCodeImageView" destination="hnf-FF-Ssd" id="PPG-j5-xGi"/>
                         <outlet property="vinDetailsLabel" destination="Bb9-Ff-quI" id="8WJ-kn-F9E"/>
                     </connections>
                 </viewController>
