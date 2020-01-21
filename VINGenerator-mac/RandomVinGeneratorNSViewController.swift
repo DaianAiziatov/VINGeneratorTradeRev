@@ -10,12 +10,31 @@ import Cocoa
 
 class RandomVinGeneratorNSViewController: NSViewController, RandomVinLoader {
 
+    @IBOutlet weak var barcodeTypeSegmentedControl: NSSegmentedControl!
     @IBOutlet weak var qrCodeImageView: NSImageView!
     @IBOutlet weak var vinDetailsLabel: NSTextField! {
         didSet {
             vinDetailsLabel.isSelectable = true
         }
     }
+
+    @IBOutlet weak var barcodeWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var barcodeHeightConstraint: NSLayoutConstraint!
+
+    struct Sizes {
+        struct QRCode {
+            static let width: CGFloat = 200
+        }
+
+        struct Barcode {
+            static let width: CGFloat = 400
+        }
+    }
+    
+    private var isQRCode: Bool {
+        return barcodeTypeSegmentedControl.selectedSegment == 0
+    }
+    private var currentVin: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,21 +44,32 @@ class RandomVinGeneratorNSViewController: NSViewController, RandomVinLoader {
     @IBAction func didTapReloadButton(_ sender: NSButton) {
         loadRandomVin()
     }
+    
+    @IBAction func didChangeBarcodeType(_ sender: NSSegmentedControl) {
+        guard let currentVin = currentVin else { return }
+        setBarcode(for: currentVin)
+    }
 
     private func copyToClipBoard(textToCopy: String) {
         let pasteBoard = NSPasteboard.general
         pasteBoard.clearContents()
         pasteBoard.setString(textToCopy, forType: .string)
     }
+
+    private func setBarcode(for vin: String) {
+        let qrCodeImage = BarcodeGenerator().generateBarcode(from: vin, isQRCode: isQRCode)
+        qrCodeImageView.image = qrCodeImage
+        barcodeWidthConstraint.constant = isQRCode ? Sizes.QRCode.width : Sizes.Barcode.width
+    }
 }
 
 extension RandomVinGeneratorNSViewController: FromVinDecodeResponseUISetuping {
     func setupUI(with vinDecodeResponse: VINDecodeResponse, vin: String) {
-        let qrCodeImage = QRCodeGenerator().generateQRCode(from: vin)
+        currentVin = vin
         DispatchQueue.main.async {
             self.copyToClipBoard(textToCopy: vin)
             self.vinDetailsLabel.stringValue = "\(vin)\n\(vinDecodeResponse.carDetails)"
-            self.qrCodeImageView.image = qrCodeImage
+            self.setBarcode(for: vin)
         }
     }
 }

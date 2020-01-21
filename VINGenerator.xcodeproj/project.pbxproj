@@ -15,7 +15,7 @@
 		25E7D7AE23CCEF3400F76A9F /* RandomVinProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E756D2396EC6B00D007B2 /* RandomVinProvider.swift */; };
 		25E7D7AF23CCEF4200F76A9F /* VINDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E756F2396ECA500D007B2 /* VINDecoder.swift */; };
 		25E7D7B023CCEF4600F76A9F /* VINDecodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E75712396ECB700D007B2 /* VINDecodeResponse.swift */; };
-		25E7D7B523CCF0E800F76A9F /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7D7B423CCF0E800F76A9F /* QRCodeGenerator.swift */; };
+		25E7D7B523CCF0E800F76A9F /* BarcodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7D7B423CCF0E800F76A9F /* BarcodeGenerator.swift */; };
 		25E7D7B923CCF58F00F76A9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25E7D7B823CCF58F00F76A9F /* Main.storyboard */; };
 		25E7D7BB23CCF6DB00F76A9F /* RandomVinGeneratorNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7D7BA23CCF6DB00F76A9F /* RandomVinGeneratorNSViewController.swift */; };
 		25E7D7BD23CCF82B00F76A9F /* RandomVinLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7D7BC23CCF82B00F76A9F /* RandomVinLoading.swift */; };
@@ -36,7 +36,7 @@
 		25E7D7A323CCECD300F76A9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25E7D7A823CCECD300F76A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25E7D7A923CCECD300F76A9F /* VINGenerator_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VINGenerator_mac.entitlements; sourceTree = "<group>"; };
-		25E7D7B423CCF0E800F76A9F /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
+		25E7D7B423CCF0E800F76A9F /* BarcodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeGenerator.swift; sourceTree = "<group>"; };
 		25E7D7B823CCF58F00F76A9F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		25E7D7BA23CCF6DB00F76A9F /* RandomVinGeneratorNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomVinGeneratorNSViewController.swift; sourceTree = "<group>"; };
 		25E7D7BC23CCF82B00F76A9F /* RandomVinLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomVinLoading.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				25E7D7A323CCECD300F76A9F /* Assets.xcassets */,
 				25E7D7A823CCECD300F76A9F /* Info.plist */,
 				25E7D7A923CCECD300F76A9F /* VINGenerator_mac.entitlements */,
-				25E7D7B423CCF0E800F76A9F /* QRCodeGenerator.swift */,
+				25E7D7B423CCF0E800F76A9F /* BarcodeGenerator.swift */,
 				25E7D7B823CCF58F00F76A9F /* Main.storyboard */,
 				25E7D7BA23CCF6DB00F76A9F /* RandomVinGeneratorNSViewController.swift */,
 			);
@@ -221,7 +221,7 @@
 				25E7D7A223CCECD000F76A9F /* AppDelegate.swift in Sources */,
 				25E7D7BE23CCF82B00F76A9F /* RandomVinLoading.swift in Sources */,
 				25E7D7C123CCF9F400F76A9F /* GenericErrorShowable.swift in Sources */,
-				25E7D7B523CCF0E800F76A9F /* QRCodeGenerator.swift in Sources */,
+				25E7D7B523CCF0E800F76A9F /* BarcodeGenerator.swift in Sources */,
 				25E7D7B023CCEF4600F76A9F /* VINDecodeResponse.swift in Sources */,
 				25E7D7AF23CCEF4200F76A9F /* VINDecoder.swift in Sources */,
 				25E7D7BB23CCF6DB00F76A9F /* RandomVinGeneratorNSViewController.swift in Sources */,

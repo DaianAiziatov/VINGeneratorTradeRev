@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-FF-Ssd">
-                                <rect key="frame" x="191" y="171" width="200" height="200"/>
+                                <rect key="frame" x="191" y="172" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="808-MB-jAF"/>
                                     <constraint firstAttribute="height" constant="200" id="cRE-z5-avc"/>
@@ -23,7 +23,7 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="placeholder" id="SrF-h1-b89"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-Ff-quI">
-                                <rect key="frame" x="254" y="140" width="73" height="16"/>
+                                <rect key="frame" x="254" y="141" width="73" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Vin Details" id="B4T-q1-fYw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -31,7 +31,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UgE-xr-V5g">
-                                <rect key="frame" x="250" y="97" width="82" height="32"/>
+                                <rect key="frame" x="250" y="98" width="82" height="32"/>
                                 <buttonCell key="cell" type="push" title="Reload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yOe-Ll-SIe">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -40,19 +40,37 @@
                                     <action selector="didTapReloadButton:" target="oBf-hx-hss" id="u9c-FE-R97"/>
                                 </connections>
                             </button>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-Nq-d96">
+                                <rect key="frame" x="218" y="378" width="146" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectOne" id="dzU-6o-v6e">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="QRCode" width="68" selected="YES"/>
+                                        <segment label="Barcode"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="didChangeBarcodeType:" target="oBf-hx-hss" id="OHv-qk-1kQ"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <constraints>
                             <constraint firstItem="UgE-xr-V5g" firstAttribute="top" secondItem="Bb9-Ff-quI" secondAttribute="bottom" constant="15" id="BKT-Ah-ROV"/>
                             <constraint firstItem="hnf-FF-Ssd" firstAttribute="centerX" secondItem="0i4-sV-eVo" secondAttribute="centerX" id="F86-wc-nPu"/>
                             <constraint firstItem="Bb9-Ff-quI" firstAttribute="centerX" secondItem="0i4-sV-eVo" secondAttribute="centerX" id="HcJ-lR-99B"/>
+                            <constraint firstItem="cnj-Nq-d96" firstAttribute="top" secondItem="0i4-sV-eVo" secondAttribute="top" constant="20" id="TPV-p0-Pdz"/>
                             <constraint firstItem="Bb9-Ff-quI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0i4-sV-eVo" secondAttribute="leading" constant="30" id="c2G-EL-pZX"/>
                             <constraint firstItem="UgE-xr-V5g" firstAttribute="centerX" secondItem="0i4-sV-eVo" secondAttribute="centerX" id="i0s-Zv-lHr"/>
-                            <constraint firstItem="hnf-FF-Ssd" firstAttribute="top" secondItem="0i4-sV-eVo" secondAttribute="top" constant="50" id="iDR-VH-Bzm"/>
                             <constraint firstItem="Bb9-Ff-quI" firstAttribute="top" secondItem="hnf-FF-Ssd" secondAttribute="bottom" constant="15" id="iav-Ba-q8J"/>
+                            <constraint firstItem="cnj-Nq-d96" firstAttribute="centerX" secondItem="0i4-sV-eVo" secondAttribute="centerX" id="oes-xg-BLg"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bb9-Ff-quI" secondAttribute="trailing" constant="30" id="qbb-Um-yXe"/>
+                            <constraint firstItem="hnf-FF-Ssd" firstAttribute="top" secondItem="cnj-Nq-d96" secondAttribute="bottom" constant="8" id="xG1-gS-2Qt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="barcodeHeightConstraint" destination="cRE-z5-avc" id="W8m-hh-rVP"/>
+                        <outlet property="barcodeTypeSegmentedControl" destination="cnj-Nq-d96" id="bTz-fz-A32"/>
+                        <outlet property="barcodeWidthConstraint" destination="808-MB-jAF" id="khL-Fj-63y"/>
                         <outlet property="qrCodeImageView" destination="hnf-FF-Ssd" id="PPG-j5-xGi"/>
                         <outlet property="vinDetailsLabel" destination="Bb9-Ff-quI" id="8WJ-kn-F9E"/>
                     </connections>
