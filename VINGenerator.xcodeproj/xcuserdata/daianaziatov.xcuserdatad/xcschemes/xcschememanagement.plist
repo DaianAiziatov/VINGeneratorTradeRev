@@ -9,10 +9,13 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>VINGenerator.xcscheme_^#shared#^_</key>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>254E75512396EC0B00D007B2</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

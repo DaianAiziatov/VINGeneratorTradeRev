@@ -7,7 +7,7 @@
 //
 import AppKit
 
-struct QRCodeGenerator: QRCodeGenerating {
+struct QRCodeGenerator {
     func generateQRCode(from string: String) -> NSImage? {
         guard let data = string.data(using: .utf8),
             let filter = CIFilter(name: "CIQRCodeGenerator", parameters: ["inputMessage" : data, "inputCorrectionLevel": "L"]),
