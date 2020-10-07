@@ -21,7 +21,7 @@ struct VINDecoder: VINDecoding {
         let service = "string"
     }
 
-    private let vinDescriptionURLString = "https://lb.api.int.chrome.traderev.com/chrome/vehicle/description?vin="
+    private let vinDescriptionURLString = "https://tr-chrome.npa.traderev.com/chrome/vehicle/description?vin="
 
     func decode(vin: String, completion: @escaping((VINDecodeResponse?) -> Void)) {
         guard let vinDescriptionURL = URL(string: vinDescriptionURLString + vin) else {

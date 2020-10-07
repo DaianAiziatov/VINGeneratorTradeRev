@@ -14,6 +14,7 @@ class RandomVinGeneratorNSViewController: NSViewController {
     @IBOutlet weak var barcodeImageView: NSImageView!
     @IBOutlet weak var vinDetailsLabel: NSTextField!
     @IBOutlet weak var barcodeWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var activityIndicator: NSProgressIndicator!
 
     private var isQRCode: Bool {
         return barcodeTypeSegmentedControl.selectedSegment == 0
@@ -35,10 +36,12 @@ class RandomVinGeneratorNSViewController: NSViewController {
         super.viewDidLoad()
         vinDetailsLabel.isSelectable = true
         helper.delegate = self
+        activityIndicator.startAnimation(self)
         helper.loadRandomVin()
     }
     
     @IBAction func didTapReloadButton(_ sender: NSButton) {
+        activityIndicator.startAnimation(self)
         helper.loadRandomVin()
     }
     
@@ -57,6 +60,7 @@ extension RandomVinGeneratorNSViewController: RandomVinGeneratorNSViewController
         DispatchQueue.main.async {
             self.vinDetailsLabel.stringValue = "\(vin)\n\(vinDecodeResponse.carDetails)"
             self.setBarcode(with: image)
+            self.activityIndicator.stopAnimation(self)
         }
     }
 
@@ -66,6 +70,7 @@ extension RandomVinGeneratorNSViewController: RandomVinGeneratorNSViewController
 
     func showError() {
         DispatchQueue.main.async {
+            self.activityIndicator.stopAnimation(self)
             let alert = NSAlert()
             alert.messageText = "Something went wrong"
             alert.alertStyle = .warning

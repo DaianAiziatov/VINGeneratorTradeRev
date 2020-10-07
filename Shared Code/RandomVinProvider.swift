@@ -13,7 +13,7 @@ protocol RandomVinProviding {
 }
 
 struct RandomVinProvider: RandomVinProviding {
-    private let randomCachedVinURLString = "https://lb.api.int.chrome.traderev.com/chrome/vehicle/description/randomVin"
+    private let randomCachedVinURLString = "https://tr-chrome.npa.traderev.com/chrome/vehicle/description/randomVin"
     func getRandomVIN(completion: @escaping(_ VIN: String?) -> Void) {
         guard let randomCachedVinURL = URL(string: randomCachedVinURLString) else {
             completion(nil)
