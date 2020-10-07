@@ -13,24 +13,24 @@ class RandomVinGeneratorNSViewController: NSViewController {
     @IBOutlet weak var barcodeTypeSegmentedControl: NSSegmentedControl!
     @IBOutlet weak var barcodeImageView: NSImageView!
     @IBOutlet weak var vinDetailsLabel: NSTextField!
-    @IBOutlet weak var barcodeWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var activityIndicator: NSProgressIndicator!
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
+
+    struct Sizes {
+        struct QRCode {
+            static let maxHeight: CGFloat = 100
+        }
+
+        struct Barcode {
+            static let maxHeight: CGFloat = 500
+        }
+    }
 
     private var isQRCode: Bool {
         return barcodeTypeSegmentedControl.selectedSegment == 0
     }
 
     var helper: RandomVinGeneratorNSViewControllerHelper = RandomVinGeneratorNSViewControllerHelper()
-
-    struct Sizes {
-        struct QRCode {
-            static let width: CGFloat = 200
-        }
-
-        struct Barcode {
-            static let width: CGFloat = 400
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class RandomVinGeneratorNSViewController: NSViewController {
 
     private func setBarcode(with image: NSImage?) {
         barcodeImageView.image = image
-        barcodeWidthConstraint.constant = isQRCode ? Sizes.QRCode.width : Sizes.Barcode.width
+        imageViewHeightConstraint.constant = isQRCode ? Sizes.QRCode.maxHeight : Sizes.Barcode.maxHeight
     }
 }
 

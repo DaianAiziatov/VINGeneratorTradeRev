@@ -32,19 +32,19 @@
             <objects>
                 <viewController title="VIN Generator" id="oBf-hx-hss" customClass="RandomVinGeneratorNSViewController" customModule="VINGenerator_mac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="0i4-sV-eVo">
-                        <rect key="frame" x="0.0" y="0.0" width="580" height="421"/>
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="331"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-FF-Ssd">
-                                <rect key="frame" x="190" y="172" width="200" height="200"/>
+                                <rect key="frame" x="15" y="82" width="150" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="808-MB-jAF"/>
-                                    <constraint firstAttribute="height" constant="200" id="cRE-z5-avc"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="808-MB-jAF"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="cRE-z5-avc"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="placeholder" id="SrF-h1-b89"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="placeholder" id="SrF-h1-b89"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-Ff-quI">
-                                <rect key="frame" x="254" y="141" width="73" height="16"/>
+                                <rect key="frame" x="54" y="51" width="73" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Vin Details" id="B4T-q1-fYw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -52,7 +52,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UgE-xr-V5g">
-                                <rect key="frame" x="249" y="98" width="82" height="32"/>
+                                <rect key="frame" x="49" y="8" width="82" height="32"/>
                                 <buttonCell key="cell" type="push" title="Reload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yOe-Ll-SIe">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-Nq-d96">
-                                <rect key="frame" x="217" y="378" width="146" height="24"/>
+                                <rect key="frame" x="17" y="288" width="146" height="24"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectOne" id="dzU-6o-v6e">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -75,18 +75,18 @@
                                 </connections>
                             </segmentedControl>
                             <progressIndicator wantsLayer="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="NiK-W0-nVu">
-                                <rect key="frame" x="333" y="108" width="16" height="16"/>
+                                <rect key="frame" x="133" y="18" width="16" height="16"/>
                             </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstItem="UgE-xr-V5g" firstAttribute="top" secondItem="Bb9-Ff-quI" secondAttribute="bottom" constant="15" id="BKT-Ah-ROV"/>
                             <constraint firstItem="hnf-FF-Ssd" firstAttribute="centerX" secondItem="0i4-sV-eVo" secondAttribute="centerX" id="F86-wc-nPu"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hnf-FF-Ssd" secondAttribute="trailing" constant="15" id="G8M-tx-F6z"/>
+                            <constraint firstAttribute="trailing" secondItem="hnf-FF-Ssd" secondAttribute="trailing" constant="15" id="G8M-tx-F6z"/>
                             <constraint firstItem="Bb9-Ff-quI" firstAttribute="centerX" secondItem="0i4-sV-eVo" secondAttribute="centerX" id="HcJ-lR-99B"/>
                             <constraint firstItem="cnj-Nq-d96" firstAttribute="top" secondItem="0i4-sV-eVo" secondAttribute="top" constant="20" id="TPV-p0-Pdz"/>
                             <constraint firstItem="NiK-W0-nVu" firstAttribute="leading" secondItem="UgE-xr-V5g" secondAttribute="trailing" constant="8" id="aE5-JJ-UBX"/>
-                            <constraint firstItem="hnf-FF-Ssd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0i4-sV-eVo" secondAttribute="leading" constant="15" id="aIX-dU-IB3"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UgE-xr-V5g" secondAttribute="bottom" constant="15" id="aed-0I-BEa"/>
+                            <constraint firstItem="hnf-FF-Ssd" firstAttribute="leading" secondItem="0i4-sV-eVo" secondAttribute="leading" constant="15" id="aIX-dU-IB3"/>
+                            <constraint firstAttribute="bottom" secondItem="UgE-xr-V5g" secondAttribute="bottom" constant="15" id="aed-0I-BEa"/>
                             <constraint firstItem="Bb9-Ff-quI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0i4-sV-eVo" secondAttribute="leading" constant="30" id="c2G-EL-pZX"/>
                             <constraint firstItem="UgE-xr-V5g" firstAttribute="centerX" secondItem="0i4-sV-eVo" secondAttribute="centerX" id="i0s-Zv-lHr"/>
                             <constraint firstItem="Bb9-Ff-quI" firstAttribute="top" secondItem="hnf-FF-Ssd" secondAttribute="bottom" constant="15" id="iav-Ba-q8J"/>
@@ -100,13 +100,13 @@
                         <outlet property="activityIndicator" destination="NiK-W0-nVu" id="miE-EG-GQi"/>
                         <outlet property="barcodeImageView" destination="hnf-FF-Ssd" id="PPG-j5-xGi"/>
                         <outlet property="barcodeTypeSegmentedControl" destination="cnj-Nq-d96" id="bTz-fz-A32"/>
-                        <outlet property="barcodeWidthConstraint" destination="808-MB-jAF" id="khL-Fj-63y"/>
+                        <outlet property="imageViewHeightConstraint" destination="cRE-z5-avc" id="99u-Ai-b0w"/>
                         <outlet property="vinDetailsLabel" destination="Bb9-Ff-quI" id="8WJ-kn-F9E"/>
                     </connections>
                 </viewController>
                 <customObject id="CJZ-a3-fuD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628" y="-302"/>
+            <point key="canvasLocation" x="482" y="-348.5"/>
         </scene>
     </scenes>
     <resources>
