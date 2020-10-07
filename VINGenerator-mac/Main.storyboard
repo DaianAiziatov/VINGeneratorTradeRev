@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="oBf-hx-hss">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="BoD-0D-vNO">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Window Controller-->
+        <scene sceneID="HAe-rL-b6r">
+            <objects>
+                <windowController id="BoD-0D-vNO" customClass="HideInsteadOfCloseWindowController" customModule="VINGenerator_mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="CtK-mh-srs">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="BoD-0D-vNO" id="c67-UI-Tb7"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="oBf-hx-hss" kind="relationship" relationship="window.shadowedContentViewController" id="JsK-fZ-E46"/>
+                    </connections>
+                </windowController>
+                <customObject id="hqI-JP-5tr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3" y="-318"/>
+        </scene>
         <!--VIN Generator-->
         <scene sceneID="3ub-1s-XKc">
             <objects>
@@ -85,7 +106,7 @@
                 </viewController>
                 <customObject id="CJZ-a3-fuD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70.5" y="23.5"/>
+            <point key="canvasLocation" x="628" y="-302"/>
         </scene>
     </scenes>
     <resources>

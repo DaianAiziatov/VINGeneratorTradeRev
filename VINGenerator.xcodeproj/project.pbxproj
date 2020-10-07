@@ -10,6 +10,7 @@
 		254E756E2396EC6B00D007B2 /* RandomVinProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E756D2396EC6B00D007B2 /* RandomVinProvider.swift */; };
 		254E75702396ECA500D007B2 /* VINDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E756F2396ECA500D007B2 /* VINDecoder.swift */; };
 		254E75722396ECB700D007B2 /* VINDecodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E75712396ECB700D007B2 /* VINDecodeResponse.swift */; };
+		25709F3E252E228B002DE628 /* HideInsteadOfCloseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25709F3D252E228B002DE628 /* HideInsteadOfCloseWindowController.swift */; };
 		25E7D7A223CCECD000F76A9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7D7A123CCECD000F76A9F /* AppDelegate.swift */; };
 		25E7D7A423CCECD300F76A9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E7D7A323CCECD300F76A9F /* Assets.xcassets */; };
 		25E7D7AE23CCEF3400F76A9F /* RandomVinProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E756D2396EC6B00D007B2 /* RandomVinProvider.swift */; };
@@ -32,6 +33,7 @@
 		254E756D2396EC6B00D007B2 /* RandomVinProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomVinProvider.swift; sourceTree = "<group>"; };
 		254E756F2396ECA500D007B2 /* VINDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VINDecoder.swift; sourceTree = "<group>"; };
 		254E75712396ECB700D007B2 /* VINDecodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VINDecodeResponse.swift; sourceTree = "<group>"; };
+		25709F3D252E228B002DE628 /* HideInsteadOfCloseWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideInsteadOfCloseWindowController.swift; sourceTree = "<group>"; };
 		25E7D79F23CCECD000F76A9F /* VINGenerator-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VINGenerator-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E7D7A123CCECD000F76A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25E7D7A323CCECD300F76A9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				25E7D7B823CCF58F00F76A9F /* Main.storyboard */,
 				25E7D7BA23CCF6DB00F76A9F /* RandomVinGeneratorNSViewController.swift */,
 				25E7D7E423D783D900F76A9F /* RandomVinGeneratorNSViewControllerHelper.swift */,
+				25709F3D252E228B002DE628 /* HideInsteadOfCloseWindowController.swift */,
 			);
 			path = "VINGenerator-mac";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				25E7D7C123CCF9F400F76A9F /* GenericErrorShowable.swift in Sources */,
 				25E7D7B523CCF0E800F76A9F /* BarcodeGenerator.swift in Sources */,
 				25E7D7B023CCEF4600F76A9F /* VINDecodeResponse.swift in Sources */,
+				25709F3E252E228B002DE628 /* HideInsteadOfCloseWindowController.swift in Sources */,
 				25E7D7AF23CCEF4200F76A9F /* VINDecoder.swift in Sources */,
 				25E7D7BB23CCF6DB00F76A9F /* RandomVinGeneratorNSViewController.swift in Sources */,
 				25E7D7AE23CCEF3400F76A9F /* RandomVinProvider.swift in Sources */,
